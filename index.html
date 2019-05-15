@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .inputTable {
+            float: left;
+            display: inline;
+        }
+
+        .btnDiv {
+            width: 100%;
+        }
+
+        .btn-group button {
+            height: 120px;
+            width: 100%;
+        }
+
+        .jsBtn {
+            height: 30px;
+            vertical-align: middle;
+            display: inline-block;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            background-color: transparent;
+            border: 1px solid transparent;
+            border-radius: .25rem;
+            transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+        }
+
+        #table {
+            margin-top: 10px;
+        }
+
+        .form-control {
+            width: 150%;
+        }
+
+        .center {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="container">
+            <div class="row">
+
+                <div class="col">
+                    <table>
+                        <tr>
+                            <td class="input-group-text center" id="first"> First Name </td>
+                            <td><input type="text" name="fname" id="fname" class="form-control"></td>
+                        </tr>
+                        <tr>
+                            <td class="input-group-text center"> Last Name </td>
+                            <td><input type="text" name="lname" id="lname" class="form-control"></td>
+                        </tr>
+                        <tr>
+                            <td class="input-group-text center"> Age </td>
+                            <td> <input type="number" name="age" id="age" class="form-control"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col">
+                    <div class="btn-group btnDiv">
+                        <button onclick="addHtmlTableRow()" class="btn btn-secondary btn-lg " id="addBtn">Add</button>
+
+                        <button onclick="viewList()" class="btn btn-secondary btn-lg" 
+                            id="updateBtn">viewlist</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div id="table">
+
+        </div> -->
+    </div>
+
+</body>
+<script src="index.js"></script>
+
+</html>

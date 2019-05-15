@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div>
+        <table id="table" style="border :1px solid black" class="table table-bordered table-striped table-dark">
+            <tr>
+                <th>s.no</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Age</th>
+                <!-- <th> <button onclick="data()" class="btn btn-secondary btn-lg" id="updateBtn">viewlist</button></th> -->
+            </tr>
+        </table>
+
+    </div>
+
+</body>
+<script src="index.js">
+</script>
+<script>  
+    var obj2 = JSON.parse(localStorage.getItem("data"));
+  function data() {
+        var table1 = document.getElementById("table");
+        // console.log(table1);
+        for (var i = 0; i < JSON.parse(localStorage.getItem("data")).length; i++) {
+            console.log(obj2[i])
+            table1.innerHTML += `
+            <tr>
+            <td>${i + 1}</td>
+            <td>${obj2[i].name}</td>
+            <td>${obj2[i].lname}</td>
+            <td>${obj2[i].age}</td>
+            <td><button onclick="removeSelectedRow(${i})" class=" btn-outline-secondary jsBtn">Remove</button></td>
+            <td><button onclick="editHtmlTbleSelectedRow(${i})" class=" btn-outline-secondary jsBtn">Edit</button></td>    
+            </tr>
+            `;
+
+        }
+
+    }
+    data()
+    </script>
+
+</html>
