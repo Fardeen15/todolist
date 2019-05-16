@@ -14,13 +14,6 @@
 <body>
     <div>
         <table id="table" style="border :1px solid black" class="table table-bordered table-striped table-dark">
-            <tr>
-                <th>s.no</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Age</th>
-                <!-- <th> <button onclick="data()" class="btn btn-secondary btn-lg" id="updateBtn">viewlist</button></th> -->
-            </tr>
         </table>
 
     </div>
@@ -28,28 +21,11 @@
 </body>
 <script src="index.js">
 </script>
-<script>  
-    var obj2 = JSON.parse(localStorage.getItem("data"));
-  function data() {
-        var table1 = document.getElementById("table");
-        // console.log(table1);
-        for (var i = 0; i < JSON.parse(localStorage.getItem("data")).length; i++) {
-            console.log(obj2[i])
-            table1.innerHTML += `
-            <tr>
-            <td>${i + 1}</td>
-            <td>${obj2[i].name}</td>
-            <td>${obj2[i].lname}</td>
-            <td>${obj2[i].age}</td>
-            <td><button onclick="removeSelectedRow(${i})" class=" btn-outline-secondary jsBtn">Remove</button></td>
-            <td><button onclick="editHtmlTbleSelectedRow(${i})" class=" btn-outline-secondary jsBtn">Edit</button></td>    
-            </tr>
-            `;
+<script>
+    if (obj2 !== null) {
 
-        }
-
+        data()
     }
-    data()
-    </script>
+</script>
 
 </html>

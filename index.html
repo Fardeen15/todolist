@@ -74,8 +74,9 @@
                     <div class="btn-group btnDiv">
                         <button onclick="addHtmlTableRow()" class="btn btn-secondary btn-lg " id="addBtn">Add</button>
 
-                        <button onclick="viewList()" class="btn btn-secondary btn-lg" 
-                            id="updateBtn">viewlist</button>
+                        <button onclick="viewList()" class="btn btn-secondary btn-lg" id="updateBtn">viewlist</button>
+                        <button onclick="update()" class="btn btn-secondary btn-lg" id="updateBtn">update</button>
+
                     </div>
                 </div>
             </div>
@@ -87,5 +88,11 @@
 
 </body>
 <script src="index.js"></script>
+<script>
+    var index = JSON.parse(localStorage.getItem("editData"));
+    if (index !== null) {
+        edit();
+    }
+</script>
 
 </html>
