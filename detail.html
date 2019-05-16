@@ -8,23 +8,30 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <style>
-        .inputTable {
-            float: left;
-            display: inline;
+        body {
+            background: linear-gradient(to right, #808080 0%, #e6e6e6 100%) !important;
+            margin: 1px;
         }
 
-        .btnDiv {
-            width: 100%;
+        #div2 {
+            position: absolute;
+            top: 30%;
+            left: 25%;
+            height: 50%;
+            width: 40%;
+            align-content: center;
+            text-align: center;
+            font-size: 35px;
         }
-
-        .btn-group button {
-            height: 120px;
-            width: 100%;
+        #div1{
+        
+            border: 3px solid black;
         }
-
         .jsBtn {
-            height: 30px;
+            height: 60px;
+            text-align: center;
             vertical-align: middle;
             display: inline-block;
             -moz-user-select: none;
@@ -35,35 +42,27 @@
             transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
         }
 
-        #table {
-            margin-top: 10px;
-        }
-
-        .form-control {
-            width: 150%;
-        }
-
-        .center {
-            text-align: center;
-        }
-</style>
+    </style>
 </head>
 
 <body>
-    <div>
-        <table id="table" style="border :1px solid black" class="table table-bordered table-striped table-dark">
-        </table>
+    <div id="div2">
+        <div id="div1">
 
+            <h1>Detail</h1>
+            <p>Name: <b><span id="name"></span></b></p>
+            <p>Last Name:<b><span id="lname"></span></b></p>
+            <p>Age: <b><span id="age"></span></b></p>
+        </div>
+        <div>
+
+            <p><button onclick="viewList()" class=" btn-outline-secondary jsBtn">back</button></p>
+        </div>
     </div>
-
 </body>
-<script src="index.js">
-</script>
+<script src="index.js"></script>
 <script>
-    if (obj2 !== null) {
-
-        data()
-    }
+    viewDetail();
 </script>
 
 </html>

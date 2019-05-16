@@ -38,7 +38,8 @@ function data() {
         <th>First Name</th>
         <th>Last Name</th>
         <th>Age</th>
-    </tr>
+        <td><button onclick="addData()" class=" btn-outline-secondary jsBtn">Add Data</button></td>
+        </tr>
 
     `
     for (var i = 0; i < obj2.length; i++) {
@@ -51,8 +52,12 @@ function data() {
                 <td>${obj2[i].age}</td>
                 <td><button onclick="removeSelectedRow(${i})" class=" btn-outline-secondary jsBtn">Remove</button></td>
                 <td><button onclick="editHtmlTbleSelectedRow(${i})" class=" btn-outline-secondary jsBtn">Edit</button></td>
-            </tr>`
+                <td><button onclick="goto(${i})" class=" btn-outline-secondary jsBtn">view Detail</button></td>
+                </tr>`
     }
+}
+function addData() {
+    window.location.href = "index.html";
 }
 function removeSelectedRow(i) {
     console.log(i);
@@ -62,23 +67,51 @@ function removeSelectedRow(i) {
     data();
 }
 var index;
-function goto(){
-}
 
-function editHtmlTbleSelectedRow(i){
+function editHtmlTbleSelectedRow(i) {
     index = i;
     localStorage.setItem("editData", JSON.stringify(i));
     window.location.href = "index.html"
 }
-function edit(){
-   var index = JSON.parse(localStorage.getItem("editData"));
+function edit() {
+    var index = JSON.parse(localStorage.getItem("editData"));
     obj2;
     console.log(document.getElementById("fname"));
     document.getElementById("fname").value = obj2[index].name;
     document.getElementById("lname").value = obj2[index].lname;
     document.getElementById("age").value = obj2[index].age;
+
 }
-function update(i){
-  index = i;
+function update() {
+    var fname = document.getElementById("fname").value;
+    var lname = document.getElementById("lname").value;
+    var age = document.getElementById("age").value;
+    var obj = JSON.parse(localStorage.getItem("data"));
+    if (obj === null) {
+        obj = [];
+    }
+    var obj1 = new Constructor(fname, lname, age);
+    obj.splice(index, 1, obj1);
+    localStorage.setItem("data", JSON.stringify(obj))
+    document.getElementById("fname").value = "";
+    document.getElementById("lname").value = "";
+    document.getElementById("age").value = "";
+    localStorage.removeItem("editData")
+    viewList();
+    data();
 }
- 
+function viewDetail() {
+    var indx = JSON.parse(localStorage.getItem("updateData"));
+    var name = obj2[indx].name;
+    var sname = obj2[indx].lname;
+    var age = obj2[indx].age;
+    document.getElementById("name").innerHTML = name;
+    document.getElementById("lname").innerHTML = sname;
+    document.getElementById("age").innerHTML = age;
+}
+// var indx;
+function goto(i) {
+    // indx = i;
+    localStorage.setItem("updateData", JSON.stringify(i));
+    window.location.href = "detail.html"
+}
